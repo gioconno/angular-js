@@ -7,20 +7,47 @@
     <title>Welcome to BooKart</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
     <script src="./app.js"></script>
 </head>
 
 <body>
-    <div id="header-wrapper" ng-controller="HeaderController">
+    <div id="headerWrapper" ng-controller="HeaderController">
         <span class="logo pull-left">{{appDetails.title}}</span>
         <span class="tagline pull-left">{{appDetails.tagLine}}</span>
         <div class="nav-wrapper pull-left">
             <ul class="nav nav-pills">
-                <li class="active">Books</li>
+                <li class="active"><a href="#">Books</a></li>
                 <li><a href="#">Kart</a></li>
             </ul>
+        </div>
+    </div>
 
+    <div id="bookListWrapper">
+        <form role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search book..." />
+            </div>
+        </form>
+        <div>
+            <ul class="list-unstyled">
+                <li class="book" style="background: white url(imgs/adultery.jpeg) no-repeat">
+                    <div class="book-details clearfix">
+                        <h3>Adultery</h3>
+                        <p>205</p>
+                        <ul class="list-unstyled list-inline">
+                            <li>Rating: 4</li>
+                            <li>Binding: paperbak</li>
+                            <li>Publisher: Random House India</li>
+                            <li>Released: 12-08-2015</li>
+                        </ul>
+                        <p>Linda, in her thirties, begins to question the routine and predictability of her days. In
+                            everybodys eyes, she has a perfect life-happy marriage, children and a career. Yet what she
+                            feels is an eno... </p>
+                        <button class="btn btn-info pull-right">Add to kart</button>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
