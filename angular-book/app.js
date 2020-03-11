@@ -1,4 +1,18 @@
-var myApp = angular.module("myApp", []);
+var myApp = angular.module("myApp", ['ngRoute']);
+
+myApp.config(function ($routeProvider) {
+    $routeProvider
+        .when("/books", {
+            templateUrl: "partials/book-list.html",
+            controller: "BookListController"
+        })
+        .when("/kart", {
+            templateUrl: "partials/kart-list.html",
+        })
+        .otherwise({
+            redirectTo: "/books"
+        })
+});
 
 myApp.controller("HeaderController", function ($scope) {
     $scope.appDetails = {};
