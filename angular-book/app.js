@@ -104,13 +104,21 @@ myApp.factory("bookService", function () {
     }
 });
 
-myApp.controller("HeaderController", function ($scope) {
+myApp.controller("HeaderController", function ($scope, $location) {
     $scope.appDetails = {};
     $scope.appDetails = {
         title: 'BookArt',
         tagLine: 'We have over 1 Million books for you'
     };
 
+    $scope.nav = {};
+    $scope.nav.isActive = function (path) {
+        if (path === $location.path()) {
+            return true;
+        }
+
+        return false;
+    }
 });
 
 myApp.controller("BookListController", function ($scope, bookService, kartService) {
