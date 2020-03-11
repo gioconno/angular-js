@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div id="bookListWrapper">
+    <div id="bookListWrapper" ng-controller="BookListController">
         <form role="form">
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search book..." />
@@ -31,20 +31,19 @@
         </form>
         <div>
             <ul class="list-unstyled">
-                <li class="book" style="background: white url(imgs/adultery.jpeg) no-repeat">
+                <li class="book" style="background: white url(imgs/{{book.imgUrl}}) no-repeat"
+                    ng-repeat="book in books">
                     <div class="book-details clearfix">
-                        <h3>Adultery</h3>
-                        <p>205</p>
+                        <h3>{{book.title}}</h3>
+                        <p>{{book.title}}</p>
                         <ul class="list-unstyled list-inline">
-                            <li>Rating: 4</li>
-                            <li>Binding: paperbak</li>
-                            <li>Publisher: Random House India</li>
-                            <li>Released: 12-08-2015</li>
+                            <li>Rating: {{book.rating}}</li>
+                            <li>Binding: {{book.binding}}</li>
+                            <li>Publisher: {{book.publisher}}</li>
+                            <li>Released: {{book.releaseDate}}</li>
                         </ul>
-                        <p>Linda, in her thirties, begins to question the routine and predictability of her days. In
-                            everybodys eyes, she has a perfect life-happy marriage, children and a career. Yet what she
-                            feels is an eno... </p>
-                        <button class="btn btn-info pull-right">Add to kart</button>
+                        <p>{{book.details}}</p>
+                        <button class="btn btn-info pull-right" ng-click="addToKart(book)">Add to kart</button>
                     </div>
                 </li>
             </ul>
