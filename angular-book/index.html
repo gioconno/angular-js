@@ -6,14 +6,12 @@
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
 
-    <title>How AngularJS works</title>
+    <title>Bootstrapping Angular-js app</title>
 </head>
 
-<body>
-    <div >
-        <p>Welcome to BookArt, we have over {{1 + 'Million'}} books here.</p>
-    </div>
-
+<body ng-init="numOfBook=10">
+    Number of books: <input ng-model="numOfBook " />
+    <p>Welcome to BookArt, we have over {{numOfBook + ' Million'}} books here.</p>
 </body>
 
 </html>
